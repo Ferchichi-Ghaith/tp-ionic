@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Contact Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Contact Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list *ngIf="contacts.length > 0; else noContacts">
+    <ion-item *ngFor="let contact of contacts">
+      <ion-label>
+        <h2>{{ contact.username }}</h2>
+        <p>{{ contact.class }}</p>
+        <p>{{ contact.numTelephone }}</p>
+      </ion-label>
+      <ion-button (click)="editContact(contact)">Edit</ion-button>
+      <ion-button color="danger" (click)="deleteContact(contact)">Delete</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noContacts>
+    <p>No contacts available yet.</p>
+  </ng-template>
+
+  <ion-button expand="block" (click)="addContact()">Add Contact</ion-button>
+</ion-content>

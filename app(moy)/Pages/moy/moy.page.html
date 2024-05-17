@@ -1,0 +1,39 @@
+<!-- moyenne.page.html -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>moyenne</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">moyenne</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Note de contrôle</ion-label>
+      <ion-input type="number" [(ngModel)]="noteControl" clearInput></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Note de synthèse</ion-label>
+      <ion-input type="number" [(ngModel)]="noteSynthese" clearInput></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">TP</ion-label>
+      <ion-input type="number" [(ngModel)]="noteTp" clearInput></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="calculateMoyenne()">Calculer</ion-button>
+
+  <ion-item *ngIf="moyenne !== null">
+    <ion-label>Moyenne :</ion-label>
+    <ion-text>{{ moyenne }}</ion-text>
+  </ion-item>
+
+</ion-content>

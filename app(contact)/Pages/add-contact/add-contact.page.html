@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Add Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Add Contact</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Username</ion-label>
+      <ion-input type="text" [(ngModel)]="contact.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Class</ion-label>
+      <ion-input type="text" [(ngModel)]="contact.class"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Telephone Number</ion-label>
+      <ion-input type="tel" [(ngModel)]="contact.numTelephone"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="save()">Save</ion-button>
+
+</ion-content>
